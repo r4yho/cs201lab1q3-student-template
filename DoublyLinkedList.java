@@ -115,6 +115,22 @@ public class DoublyLinkedList<E> {
     }
 
     public void group(){
+    Node<E> temp = header.next;
+    while (temp != trailer) {
+      Node<E> next = temp.next;
+      if (temp.getElement() == null) {
+        // link nodes before and after the null node
+        Node<E> prev = temp.prev;
+        prev.next = next;
+        next.prev = prev;
 
+        // shift null node to the front of the list
+        temp.prev = header;
+        temp.next = header.next;
+        header.next = temp;
+      }
+      // move temp
+      temp = next;
+    }
     }
 }
