@@ -129,8 +129,8 @@ public class DoublyLinkedList<E> {
         temp.next = header.next;
         header.next = temp;
       }
-      // move temp
-      temp = next;
-    }
+        // move temp
+        temp = next;
+        }
     }
 }
