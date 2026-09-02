@@ -127,6 +127,7 @@ public class DoublyLinkedList<E> {
         // shift null node to the front of the list
         temp.prev = header;
         temp.next = header.next;
+        header.next.prev = temp;
         header.next = temp;
       }
         // move temp
